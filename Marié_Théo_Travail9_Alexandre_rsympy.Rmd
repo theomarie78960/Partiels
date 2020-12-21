@@ -1,0 +1,60 @@
+---
+title: " Le travail de Alexandre KAdaoui **[est disponible ici](https://github.com/Kadaluck/PSB2020_R/blob/main/gr01_kadaoui_alexandre_SYMPY.pdf)** "
+author: "Théo Marié"
+date: "20/12/2020"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+**SYNTHESE DU TRAVAIL EN QUESTION**
+
+rSymPy est un package des mathématiques qui sert à effecué beaucoup de calculs. Beaucoup de fonctionnalités sont présentés ici, très intéressantes et très utiles. C'est un très bon travail, basique, simple, efficace. Alexandre cite aussi ses sources, où il a trouvé ses inspirations, ce qui est très importan pour éviter le plagiat. Chaque fonction a le droit à sa phrase brève explicative ou descriptive, ce qui nous aide à comprendre ce qu'il écrit.
+
+ 
+**EXTRAIT COMMENTE DES PARTIES DU CODE**
+
+```{r}
+library(rJava)
+library(rJython)
+library(rSymPy)
+sympy("var('x')") #on introduit une variable x
+sympy("y = x*x") #on introduit une variable y équivalente à x au carré
+sympy("y")
+```
+
+Très iportante étape, nécessaire ua bon déroulement des futures calcules. Il montre bien les package a appeler, puis définit la variable "x".
+
+```{r}
+sympy("factor(x**3 - x**2 + x - 1)")
+```
+
+Ici, la fonction factor nous permet de factorisé une expression, ce qui est grandement utile.
+
+```{r}
+sympy("limit(1/x, x, oo)") #limite de 1/X quand x tend vers l'infini (noté; "oo")
+sympy("limit(1/x, x, 0)") #limite de 1/X quand x tend vers 0
+```
+
+Les annotations sont très interessantes et on comprend bien ce qu'il a voulu faire.
+
+
+**EVALUATION DU TRAVAIL EN QUESTION**
+
+Critère 1 : Visuellement apréciable sur pdf   3/4 peu agréable, mais efficace
+
+Critère 2 : idées pour faire le code          3/4 de belles fonctionnalités, creusée via les sources citées
+
+Critère 3 : Fonctionnalité du code            4/4 code très fonctionnel
+
+Critère 4 : lisibilité du code                4/4 très beau code, bien écrit et espacé 
+
+Critère 5 : explications données              3/4 quelques explications interessantes
+
+**CONCULSION**
+
+Un travail simple, efficace, et bien expliqué pour ce package rSympPy. Bonnes explications, bien recherchées, et des sources témoignant de l'effort produit.

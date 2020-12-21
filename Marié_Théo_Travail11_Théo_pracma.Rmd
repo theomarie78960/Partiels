@@ -1,0 +1,50 @@
+---
+title: ' Le travail de THEO MARIE  **[est disponible ici](https://github.com/theomarie78960/PSBX/blob/main/Th%C3%A9oMari%C3%A9_pracma.pdf)**'
+author: "Théo Marié"
+date: "20/12/2020"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+**SYNTHESE DU TRAVAIL EN QUESTION**
+
+Le package **pacma** est une librairie pour ceux qui ont la bosse des Maths, ou tout simplement pour ceux veulent utiliser quelques fonctions spéciales. En effet, ce package vous offre la possibilité de faire de l'analyse numérique, de l'algèbre niléaire, des équations différentielles, des séries chronologiques, mais aussi de travailler sur des problèmes mathématiques complexes. Le travail présenté n'est pas très riche, mais bien fonctionnel, et répond bien à la consigne : introduire le package pracma.
+
+
+**EXTRAIT COMMENTE DES PARTIES DU CODE**
+
+```{r}
+library(pracma)
+norm(c(1,1), type="2")
+```
+
+Ici, il est question de savoir, grâce à pracma e à sa fonction "norm", de calculer la norme d'un vecteur.
+
+```{r}
+library(pracma)
+nextpow2(11)
+```
+
+Ici, un peu plus technique, on va savoir, grâce à la focntionalité "nextpow2", le nombre le plus proche dont la la racine carrée est entière !, ici 11 est proche de 16 dont la racine carrée est 4 : le résultat du code est donc 4.
+
+**EVALUATION DU TRAVAIL EN QUESTION**
+
+Critère 1 : Visuellement apréciable sur pdf   3/4 agréable 
+
+Critère 2 : idées pour faire le code          2/4 Pas beaucoup de fonctions décrites
+
+Critère 3 : Fonctionnalité du code            3/4 Fonctionne bien
+
+Critère 4 : lisibilité du code                4/4 Très lisible 
+
+Critère 5 : explications données              2/4 Pas assez complètes 
+
+**CONCULSION**
+
+Un travail sans trop de complexités, des notions simples, expliquées, mais peut être un eu trop justes en terme de quantité.
+

@@ -1,0 +1,57 @@
+---
+title: " Le travail de Jean SOURIS **[est disponible ici](https://github.com/jeansouris/PSBX/blob/main/gr03_souris_jean_caret.pdf)** "
+author: "Théo Marié"
+date: "20/12/2020"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+**SYNTHESE DU TRAVAIL EN QUESTION**
+
+Le package Caret est important car il nous introduit à l'analyse prédictive, très interressante en programmation. La notion de seed doit être expliquée, ainsi que l'essence même de ce qu'est l'analyse prédictive, et quelques étapes importantes, comme l'entrainement et le test. Malheureusement, le travail ici n'est pas complet. Il s'arrete seulement à la partie de l'entraienment, ou il entraine ses données, mais il effectue cette manipulation 2 fois. Aussi, on ne comprend pas ce qu'est le seed : ce n'est pas un chiffre aléatoire généré, c'est la référence de départ que je vais donner à l'algorythme pour générer de l'aléat. Il ne contient pas non plus de fonctionnalité externe qui pourraient habiller l'algorythme, pour le rendre plus efficace.
+
+ 
+**EXTRAIT COMMENTE DES PARTIES DU CODE**
+
+```{r}
+library(lattice)
+library(ggplot2)
+library(caret)
+set.seed(2020)
+Essaie_1 <- createDataPartition(iris$Species, p = .6, 
+                                  list = FALSE, 
+                                  times = 3)
+head(Essaie_1)
+```
+
+Il crée ici un tableau comportant les données d'Iris, grâce à la fonction "createDataPartition". Ensuite, il la paramettre, en disant qu'il veut évaluer 60% des données, et ceci dans 3 colonnes, en ajoutant list = FALSE, ce qui évite que les données soient sous forme de liste.
+
+```{r}
+Essaie_2 <- createDataPartition(iris$Species, p = .6, 
+                                list = TRUE, 
+                                times = 2)
+head(Essaie_2)
+```
+
+Même chose que plus aussi, sauf pour 2 colonnes.
+ 
+**EVALUATION DU TRAVAIL EN QUESTION**
+
+Critère 1 : Visuellement apréciable sur pdf   1/4 Peu d'efforts
+
+Critère 2 : idées pour faire le code          1/4 Peu recherché, pas complet
+
+Critère 3 : Fonctionnalité du code            2/4 le code marche mais est incomplet
+
+Critère 4 : lisibilité du code                3/4 Le code est bien lisible 
+
+Critère 5 : explications données              1/4 Des informations parfois fausses et insuffisantes.
+
+**CONCULSION**
+
+Le travail est basique, et même si il marche, il ne dévoile en rien les particularités du package Caret, c'est dommage. On aurait préféré des résultats, et des fonctionalités autres, comme le temps que l'algorythme prend pour fonctioner, ou un graphique.

@@ -1,0 +1,70 @@
+---
+title: ' Le travail de WENJUN ZHAO  **[est disponible ici](https://github.com/claudia0524/PSBX/blob/main/gr03_Wenjun_ZHAO_Math/gr03_Wenjun_ZHAO_Pracma.pdf)**'
+author: "Théo Marié"
+date: "20/12/2020"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+**SYNTHESE DU TRAVAIL EN QUESTION**
+
+Le package **pacma** est une librairie pour ceux qui ont la bosse des Maths, ou tout simplement pour ceux veulent utiliser quelques fonctions spéciales. En effet, ce package vous offre la possibilité de faire de l'analyse numérique, de l'algèbre niléaire, des équations différentielles, des séries chronologiques, mais aussi de travailler sur des problèmes mathématiques complexes. Malheureusement, que très peu du contenu est expliqué ici. On voit la fonction "AND", "OR", et "BISECT". Cependant, ces fonctions ne sont pas bien expliquées, voir pas du tout. On ne comprend pas ce qui a été fait, c'est bien dommage. On sent qu'il y a eu un travail, que des recherches ont été faites, mais il n'y a pas de résultat.
+
+**EXTRAIT COMMENTE DES PARTIES DU CODE**
+
+```{r}
+library(pracma)
+A <- matrix(c(0.5,  0.5,  0, 0.75, 0,
+                  0.5,  0, 0.75, 0.05, 0.85,
+                  0.35, 0, 0,  0,  0.01,
+                  0.5,  0.65, 0.65, 0.05, 0), 4, 5,
+            byrow=TRUE)
+    B <- matrix(c( 0, 1, 0, 1, 0, 
+                   1, 1, 1, 0, 1,
+                   0, 1, 1, 1, 0,
+                   0, 1, 0, 0, 1), 4, 5, byrow=TRUE)
+    
+and(A, B)
+or(A, B)
+```
+
+Ici, on voit que 2 matrice ont été crées. Elles comportent 4lignes et 5 colonnes, comme paramétrées par Wenjun. Une est attribuée à A, l'autre à B. 2 fonctions nous sont proposées, "AND et "OR". On ne comprend pas ce qui se passe, ni ce que cela produit comme effet.
+
+```{r}
+library(pracma)
+bisect(sin, 3.0, 4.0)
+```
+
+La fonction bisect n'est pas bien epliquée. Elle recherche des racines de nombres univariés dans des intervales. 
+
+
+```{r}
+# Legendre polynomial of degree 5
+lp5 <- c(63, 0, -70, 0, 15, 0)/8
+f <- function(x) polyval(lp5, x)
+bisect(f, 0.6, 1)
+```
+
+Ici, on voit qu'elle atribue un polynome de degré 5 à lp5, qu'elle défini f comme fonction de ce polynome avec comme variable x, puis qu'elle recherche des racines.
+
+**EVALUATION DU TRAVAIL EN QUESTION**
+
+Critère 1 : Visuellement apréciable sur pdf   2/4 
+
+Critère 2 : idées pour faire le code          1/4 
+
+Critère 3 : Fonctionnalité du code            2/4 
+
+Critère 4 : lisibilité du code                3/4 
+
+Critère 5 : explications données              0/4 
+
+**CONCULSION**
+
+Le travail n'explique pas le package pracma, et se montre trop incomplet. On aurait aimé voir plus de contenu, et des explications quand à la nature et l'interet de certaines fonctionnalités. 
+
