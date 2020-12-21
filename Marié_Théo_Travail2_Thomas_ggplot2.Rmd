@@ -1,0 +1,62 @@
+---
+title: ' Le travail de THOMAS SERVANT **[est disponible ici](https://github.com/ThomasDServant/psbx/blob/main/gr01_servant_thomas_GGPLOT2.pdf)**'
+author: "Théo Marié"
+date: "20/12/2020"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+**SYNTHESE DU TRAVAIL EN QUESTION**
+
+Le package GGPLOT2 est d'une utilité forte lorsqu'on veut présenter des résultats sous forme de graphiques. La data visualisation est une partie essentielle du Data Analyst, il faut pouvoir à la fois communiquer ses résultats en étant compréhensible, mais aussi visualiser le travail effectué. Le travail rendu est une très bonne introduction au package GGPLOT2 : il nous montre beaucoup de façon différentes la repésentation de bases de données, et propose des fonctionnalités interessantes (les facettes, les corrélations). Les sources sont citées, ce qui prouve que l'élève a rechercher des façons d'utiliser ce package.
+
+
+**EXTRAIT COMMENTE DES PARTIES DU CODE**
+```{r message=FALSE}
+library(ggplot2)
+ggplot(mpg) + 
+  geom_point(aes(x = cyl, y = displ), 
+             color = "darkgreen", size = 3, alpha = 0.3)
+```
+Ici, on veut montrer un graphique en nuage de points et donc utilise la fonction **geom_point**, pour une base de donnée se prénomant "mpg". Il demande de mettre les valeurs de cyl en abscisse, et displ en ordonnée. Ensuite, il configure son graphique en donnant la couleur "darkgreen" aux points et en définissant leur taille par "3".
+
+```{r message=FALSE}
+ggplot(mpg) + geom_boxplot(aes(x = cty , y = hwy),fill = "wheat", color = "blue")
+```
+
+Il montre ici une autre forme de graphiques, celle des boites à moustaches. Toujours en utilisant la base de données mpg, il paramètre sa fonction en définissant abscisses et ordonnées, puis grâce au fill, il défini la couleur de remplissage, alors qu'avec color, il définit la couleur du contour de la boite. 
+
+```{r message=FALSE}
+ggplot(mpg) +
+  aes(x = displ, y = cty) +
+  geom_line(size = 1L, colour = "#0c4c8a") +
+  theme_grey() +
+  facet_wrap(vars(year))
+```
+
+Ce qui est remarquable dans ce code, c'est qu'il a utilisé une autre fonction, **igrpah**, pour avoir de meilleurs performance. "facet_wrap(vars(year))" permet d'afficher les réultats en fonction des années et de présenter 2 grpahiques côtes à côtes. C'est très utile dans certains situations, comme par exemple le nombre de personnes testées positif à un virus.
+
+
+
+**EVALUATION DU TRAVAIL EN QUESTION**
+
+Critère 1 : Visuellement apréciable sur pdf   2/4 Pas forcément très lisible, à ne pas négliger
+
+Critère 2 : idées pour faire le code          4/4 de très bonnes idées avec de bons exemples
+
+Critère 3 : Fonctionnalité du code            4/4 tout fonctionne très bien
+
+Critère 4 : lisibilité du code                3/4 le code est très bien écrit, espacé, lisible.
+
+Critère 5 : explications données              4/4 Les explications sont très interessantes.
+
+**CONCULSION**
+
+C'est un très bon travail qui nous montre plusieurs utilisations de la librarie GGPLOT2. Le seul bémol que je trouve est le manque d'exemples de valeurs : Il aurait fallu donner des exemples sur dans quel contexte doit on utiliser tel graphique ou tel graphique.
+

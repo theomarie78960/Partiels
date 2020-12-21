@@ -1,0 +1,42 @@
+---
+title: " Le travail de THEO MARIE **[est disponible ici](https://github.com/theomarie78960/PSBX/blob/main/Th%C3%A9oMari%C3%A9_ggplot2.pdf)** "
+author: "Théo Marié"
+date: "20/12/2020"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+**SYNTHESE DU TRAVAIL EN QUESTION**
+
+Le package GGPLOT2 est d'une utilité forte lorsqu'on veut présenter des résultats sous forme de graphiques. La data visualisation est une partie essentielle du Data Analyst, il faut pouvoir à la fois communiquer ses résultats en étant compréhensible, mais aussi visualiser le travail effectué.Ici, le travail est simple, un peu trop basique. Un exemple de graphique est présenté, on aurait aimé en voir plus. En tout cas ce dernier est bien expliqué.
+
+**EXTRAIT COMMENTE DES PARTIES DU CODE**
+
+```{r}
+library("ggplot2")
+ggplot(mtcars, aes(mpg, wt)) +
+  geom_point(aes(size = qsec), alpha = 0.5) + ##je choisis des ronds
+  scale_size(range = c(0.5, 12))##min 0,5, max 12
+```
+ On voit ici qu'il invoque dans sa librairy ggplot2, puis qu'il décide d'afficher un graphique se référant à des valeurs trouvées dans la base de données mtcars. il prend un abscisse mpg, puis en ordonnées wt. Il décide du modèle de son graphique, "geom_point", c'est à dire en nuage de points. Ensuite, il paramettre ses points, qui seront représenté sous forme ronde, puis leur taille (de 0,5 à 12).
+ 
+**EVALUATION DU TRAVAIL EN QUESTION**
+
+Critère 1 : Visuellement apréciable sur pdf   3/4 
+
+Critère 2 : idées pour faire le code          1/4 
+
+Critère 3 : Fonctionnalité du code            4/4 
+
+Critère 4 : lisibilité du code                3/4 
+
+Critère 5 : explications données              3/4 
+
+**CONCULSION**
+
+Un travail simple, mais efficace, qui explique le processus de fabrication d'un graphique à l'aide de GGPLOT2. On aurait aimé avoir plus d'exemples graphique.

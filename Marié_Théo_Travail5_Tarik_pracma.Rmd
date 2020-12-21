@@ -1,0 +1,59 @@
+---
+title: ' Le travail de TARIK HARAM **[est disponible ici](https://github.com/T-Hak/PSBX/blob/main/Tutoriel%20pracma/gr02_hakam_tarik_pracma.pdf)**'
+author: "Théo Marié"
+date: "20/12/2020"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+**SYNTHESE DU TRAVAIL EN QUESTION**
+
+Le package pracma est très important dans les mathématiques, surtout lorsque l'on veut représenter des formules. La visualisation faite par le code de Tarik est très propre et belle. Le sujet est creusée, les exemples sont recherchés et interessant. Cependant, ce n'est pas au niveau de débutants. Il aurait du faire de plus grandes explications, pour que l'on comprenne dans quelle direction se dirige-t-il. Que ce soit la Quadrature Hermite-Gauss ou l'approximation de Tchebychev, il faut penser à bien se faire comprendre, et peu d'étudiants noice comprennent ses explications et sa direction.
+
+**EXTRAIT COMMENTE DES PARTIES DU CODE**
+
+\begin{equation}
+   \int_{-\infty}^{\infty}f(x)\exp(-x^2)\,dx
+\end{equation}
+
+ Ici, on nous montre à intégrer des fonction sous forme mathématiques intéressantes.
+ 
+```{r}
+library("pracma")
+f <- gaussHermite(17)
+# Integrate x^2 exp(-x^2)
+sum(f$w * f$x^2) #=> 0.88622692545276 == sqrt(pi)/2
+# Integrate cos(x) * exp(-x^2)
+sum(f$w * cos(f$x)) #=> 1.38038844704314 == sqrt(pi)/exp(1)^0.25
+```
+Ici, après avoir relu ce qu'il écrit en amont, je n'arrive pas à bien comprendre son résonnment. Il décrit juste "Pour trouver ces solutions, nous avons codé les commandes suivantes ". Comment peut il arriver jusqu'ici ?
+
+```{r eval=TRUE}
+#Approximate sin(x) on [-pi, pi] with a polynomial of degree 9
+# Polynomial:
+p1 <- rev(c(0, 1, 0, -1/6, 0, 1/120, 0, -1/5040, 0, 1/362880))
+```
+
+On nous explique une fonction en amont, qui n'a rien à voir avec le nombre pi, et je ne comprend absolument pas ce qu'il veut transmettre ici. 
+
+
+**EVALUATION DU TRAVAIL EN QUESTION**
+
+Critère 1 : Visuellement apréciable sur pdf   4/4 Très beau visuel
+
+Critère 2 : idées pour faire le code          2/4 Ce qui a été retenu n'est pas d'un niveau de débutat, et donc est illisible pour quelqu'un de la classe.
+
+Critère 3 : Fonctionnalité du code            4/4 Il a l'air de parfaitement fonctionner
+
+Critère 4 : lisibilité du code                4/4 Le code est bien écrit, espacé.
+
+Critère 5 : explications données              1/4 On se perd facilement et des raccourcis ne sont pas toujours bien compris.
+
+**CONCULSION**
+
+Très bon travail, avec de belles fonctionnalités, mais des explications peu claires et trop avancées. J'aurai aimé pouvoir comprendre ce que Tarik voulait nous montrer, mais je n'ai saisi qu'une infme partie de la librairie Pracma.

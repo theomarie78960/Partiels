@@ -1,0 +1,58 @@
+---
+title: ' Le travail de AMINE BENOUCIEF **[est disponible ici](https://github.com/benben62/PSBX/blob/main/GR03_BENOUCIEF_Amine_Sympy.pdf)**'
+author: "Théo Marié"
+date: "20/12/2020"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE)
+```
+
+**SYNTHESE DU TRAVAIL EN QUESTION**
+
+rSymPy est un package des mathématiques qui sert à effecué beaucoup de calculs. Beaucoup de fonctionnalités sont présentés ici, très intéressantes et très utiles. C'est un très bon travail, basique, simple, efficace. Amine cite aussi ses sources, où il a trouvé ses inspirations, ce qui est très importan pour éviter le plagiat. Chaque fonction a le droit à sa phrase brève explicative ou descriptive, ce qui nous aide à comprendre ce qu'il écrit.
+
+
+**EXTRAIT COMMENTE DES PARTIES DU CODE**
+
+```{r message=FALSE}
+library(rSymPy)
+x <- Var("x")
+```
+Importante étape, définir que x est une variable. Sans cette définition, il serait impossible de faire des équations avec x.
+
+```{r message=FALSE}
+sympy("nsimplify(3.75)")
+```
+Ici, la fonction nsimplify nous aide à simplifier 3,75.
+
+```{r message=FALSE}
+sympy("solve(x**2 - 2,x)")
+```
+Ici, un peu plus complexe, on veut résoudre une équation, celle de "x^2 - 2 = 0".
+
+```{r message=FALSE}
+sympy("((x-2)*(x-2))") 
+sympy("(2 * (x-2))") 
+```
+Pouvoir développer des expressions, aussi complexes soient-elles.
+
+
+**EVALUATION DU TRAVAIL EN QUESTION**
+
+Critère 1 : Visuellement apréciable sur pdf   3/4 Agréable
+
+Critère 2 : idées pour faire le code          3/4 de bonnes fonctionnalités trouvées
+
+Critère 3 : Fonctionnalité du code             4/4 tout fonctionne
+
+Critère 4 : lisibilité du code                4/4, très simple et agréable à lire
+
+Critère 5 : explications données              3/4 de brefs explications qui mériteraient parfois d'un peu plus d'étoffe
+
+**CONCULSION**
+
+Très bon travail, avec de belles fonctionnalités, et des explications claires et précises. Il n'y a rien à redire sur ce travail.

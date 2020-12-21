@@ -1,0 +1,69 @@
+---
+title: " Le travail de THEO MARIE **[est disponible ici](https://github.com/theomarie78960/PSBX/blob/main/Th%C3%A9oMari%C3%A9_Caret.pdf)** "
+author: "Théo Marié"
+date: "20/12/2020"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+**SYNTHESE DU TRAVAIL EN QUESTION**
+
+Le package Caret est important car il nous introduit à l'analyse prédictive, très interressante en programmation. La notion de seed est expliqué être expliquée, ainsi que l'essence même de ce qu'est l'analyse prédictive. Les étapes importantes son clairement énoncées comme l'entrainement et le test. On aurait aussi pu voir des petites fonctionnalités, comme une visualisation graphique des prédictions e l'agorythme, le fait de savoir combien de temps met l'algorythme à fonctionner.
+
+**EXTRAIT COMMENTE DES PARTIES DU CODE**
+
+```{r message=FALSE}
+library(caret) ## ON INVOQUE CARET
+set.seed(333) ## ON PLANTE UNE GRAINE
+
+trainIndex <- createDataPartition(iris$Species, p = 0.8,
+                                  list = FALSE,
+                                  times = 1)
+
+irisEntrainement <- iris[ trainIndex,] ##Création du dataset d'entrainement
+irisTest <- iris[-trainIndex,]##Création du dataset de Test
+```
+
+Extrait bien commenté, qui nous renseigne exactement sur ce qu'on est entrain de faire.
+
+```{r message=FALSE}
+Theo <- train(Species ~ ., 
+              data = irisEntrainement, 
+              method = "rf",) ##il faut ici installer le package randomforest
+```
+Mise en place du modèle Théo, qui va utiliser la méthode randomForest popur s'entrainer sur irisentrainement.
+
+
+```{r message=FALSE}
+
+prediction_du_test_iris <- predict(Theo, irisTest)## il faut ici installer le package e1071
+tableau_de_prediction <- data.frame(irisTest$Species, prediction_du_test_iris )
+
+reussite <- tableau_de_prediction[,1] == tableau_de_prediction[,2]
+nombre_de_reussites <- sum(reussite)
+nombre_de_ligne <- nrow(tableau_de_prediction)
+exatitude_de_la_prediction <- nombre_de_reussites/nombre_de_ligne * 100
+```
+
+Nous sommes ici aux dernières lignes de code, qui nous renseigne sur notre principal but, c'est à dire l'accuracy de notre algorythme. Les lignes de code sont claires, efficaces. 
+ 
+**EVALUATION DU TRAVAIL EN QUESTION**
+
+Critère 1 : Visuellement apréciable sur pdf   3/4 Utilisation de couleurs, et de démarquations, espacés
+
+Critère 2 : idées pour faire le code          2/4 Pas très novateur car vu en cours, mais suffisant pour expliquer
+
+Critère 3 : Fonctionnalité du code            3/4 Assez complètes
+
+Critère 4 : lisibilité du code                4/4 Code très lisible
+
+Critère 5 : explications données              /4 Explications nombreuses, étoffées, pour être pédagogue
+
+**CONCULSION**
+
+Bon code, très bonnes explications, mais on auait pu faire mieux en rajoutant quelques fonctionalités, comme avec le temps que l'algorythme a pris pour effectuer les calculs (t_after - t_before, en utilisant sys.time()), ou encore un graphique, avec ggplot2.

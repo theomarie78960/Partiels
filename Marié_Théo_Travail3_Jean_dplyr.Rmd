@@ -1,0 +1,61 @@
+---
+title: ' Le travail de JEAN SOURIS **[est disponible ici](https://github.com/jeansouris/PSBX/blob/main/gr03_souris_jean_dplyr.pdf)**'
+author: "Théo Marié"
+date: "20/12/2020"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+**SYNTHESE DU TRAVAIL EN QUESTION**
+
+DPLYR est un package interessant par ses fonctionnalité de traitement et de modifications de bases de donnés, c'est indispensable dans le mode professionel du data analyst. Ici, le travail est ordonné, avec une introduction et 3 exemples de fonctionnalité Slice, Select et Rename. Sa simplicité montre son efficacité. Le code est bien réalisé, mais le pdf est illisible. Il est important de bien présenter son travail pour pouvoir être compris de tous, surtout de ceux qui ne maitrisent pas le langage python.
+
+
+**EXTRAIT COMMENTE DES PARTIES DU CODE**
+
+```{r message=FALSE}
+library("dplyr")
+library("nycflights13")
+data(airports)
+airports %>% slice_sample(n=6)
+```
+
+Ici, la fonction Slice est utisée dans sa version slice_sample, qui nous permet de selectionner aléatoirement. Ici, il est demandé avec n=6 de choisir 6 lignes aléatoirement dans la base de données "airports".
+
+```{r message=FALSE}
+data(flights)
+select(flights, -origin, -time_hour)
+```
+
+Il est ici question de la focntion "select", et plus précisément de la fonctionnalité qui sert à présenter un tableau sans certaines colonnes.SI par exemple, on veut présenter un tableau général sur un produit, sans vouloir afficher son numéro d'identification, on peut avoir recours à cette fonctionnalité. Dans la table flight, il enlève la colonne "origin" et "time_hour".
+
+```{r message=FALSE}
+rename(airports, altitude = alt, time_zone = tzone)
+```
+
+Grace à la fonctionnalité Rename, il nous explique que l'on peut renommer des noms de colonne detableau. Si une colonne que l'on utilise est le fruit d'une addition de 2 valeurs, alors il est important de renommer cette colonne pour bien comprendre ce qu'elle exprime (par exemple PRIX HT + TVA = PRIX TTC). Il utilise cette fonctionnalité ici pour renommer la colonne altitude par alt, et la colonne time_zone par tzone.
+
+**EVALUATION DU TRAVAIL EN QUESTION**
+
+Critère 1 : Visuellement apréciable sur pdf   1/4 très peu agréable à regarder
+
+Critère 2 : idées pour faire le code          3/4 De beaux exemples, de belles idées
+
+Critère 3 : Fonctionnalité du code            4/4 Tout fonctionne très bien
+
+Critère 4 : lisibilité du code                4/4 Le code est très bien écrit, espacé.
+
+Critère 5 : explications données              3/4 Les explications sont claires
+
+**CONCULSION**
+
+Ce travail est d'une efficacité remarquable, il est simple et utile. Jean nous a montré certaines fonctionnalités basiques mais très pratiques. Malgrès un pdf illisible, il nous offre ici un très bon travail.
+
+
+
